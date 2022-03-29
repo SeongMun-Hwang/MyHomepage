@@ -1,0 +1,39 @@
+h1.target{
+  text-align: center;
+}
+
+table.basic{
+  width: 100%;
+  border-collapse: collapse;
+}
+
+table.basic th{
+  padding: 10px;
+  background-color: #3E74C7;
+  color: white;
+}
+
+table.basic2{
+  width: 100%;
+  border-color: #3E74C7;
+  border-collapse: collapse;
+  text-align: center;
+}
+
+table.basic2 td, th{
+  padding: 4px;
+}
+
+td.style, table.basic2 th{
+  background-color: #6F9EE5;
+  color: white;
+}
+
+caption{
+  text-align: right;
+  caption-side: bottom;
+}
+
+a.target1{
+  color: white;
+}
