@@ -13,6 +13,11 @@ table.basic th{
   color: white;
 }
 
+table.basic th:hover{
+  background-color: grey;
+  text-shadow: 1px 1px 1px yellow;
+}
+
 table.basic2{
   width: 100%;
   border-color: #3E74C7;
