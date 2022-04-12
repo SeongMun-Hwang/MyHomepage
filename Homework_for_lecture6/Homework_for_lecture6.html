@@ -5,8 +5,8 @@
     <style>
     #header{
       color: white;
-      background-color: lightgrey;
-      text-align: center;
+      background-color: #8CACB2;
+      text-align: left;
       margin-left: 50px;
       margin-right: 50px;
     }
@@ -14,22 +14,33 @@
       background-color: white;
       color: black;
       text-decoration: none;
-      float: left;
+      float: right;
     }
     #header ul li{
       display: inline;
+      background-color: white;
+      border: solid #8CACB2;
+    }
+    #header ul li:hover{
+      background-color: grey;
+    }
+    #header p{
+      //float: left;
+      //display: inline;
     }
     #header img{
       margin: 10px;
       float: left;
     }
     #nav1{
+      clear: both;
       text-align: center;
       width: 100%;
     }
     #nav2{
-      float: right;
-      width: 40%;
+      float: left;
+      text-align: center;
+      width: 60%;
     }
     #content{
       float:left;
@@ -46,8 +57,13 @@
 
     #fixed{
       position: fixed;
-      background-color: skyblue;
-      bottom: 100px;
+      background-color: #8CACB2;
+      text-align: center;
+      color: black;
+      width: 300px;
+      height: 70px;
+      top: 300px;
+      left: 500px;
     }
 
 
@@ -55,13 +71,16 @@
   </head>
   <body>
     <div class="">
+      <p id="fixed">10% OFF $35+ | 15% OFF $60+<br>*USE CODEL HAPPYAPRIL</p>
       <div id="header">
-        <img src="logo.jpg" alt=""><p>Premium bookshop</p>
+        <img src="logo.png" alt=""><br><p>Premium bookshop</p>
         <ul>
           <li>Home</li>
           <li>Books</li>
           <li>Gifts</li>
         </ul>
+        <br>
+        <br>
       </div>
 
       <div id="nav1">
@@ -70,7 +89,23 @@
         <hr>
       </div>
       <div id="nav2">
+        <h2>The President Is Missing</h2>
+        <p>Please jon us in welcoming President Bill Clinton and the worlds bestselling author
+        James Patterson to celebrate the release of their new novel. The President in
+        Missing. A limited number of wristbands for event access will be distrubuted
+        beginning at 9am tge day of the even</p>
+        <img src="clinton.jpg" alt=""><br>
+        <hr width="100%" style="border:1px dotted">
 
+        <h2>True Roots: A Mindful Kitchen with More Than 100
+        Recipes Free of Gluten, Dairy, and Refined Sugar</h2>
+        <p>in her first book, kristin Cavallari shared her personal journey along with her tips op
+        everything from sytle to relationships. And now, with True Roots, Cavallari shows
+        you that improving the wat you eat doesn't have to be difficult-a clean and toxin-
+        free diet can and should be fun, easy, and enjoyable. She learned the hard way that
+        dieting leads nowher good, and that a clean lifestyle is hte tichet to feeling and
+        being healthy</p>
+        <img src="roots.jpg" alt="">
       </div>
       <div id="content">
 
