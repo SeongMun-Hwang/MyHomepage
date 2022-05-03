@@ -33,22 +33,50 @@
                 width: 240px;
                 height: 240px;
             }
-            .list td, tr{
-                border-style:hidden;
+            .list ul,li{
+                border: 1px;
+            }
+            .list table{
+                border: none;
+            }
+            .list td{
+                border: 1;
+                border-color: black;
+            }
+            .list td:hover{
+                border-color: red;
             }
         </style>
     </head>
 
     <body>
         <script>
-            function clicked(x){
-                var x = document.getElementById(x);
-                if(x.src.match("selected")){
-                    x.src=x.id+".jpg";
+            var sum;
+            function change(x){
+                if(document.getElementById("target").style.backgroundColor.match("red")){
+                    document.getElementById("target").style.backgroundColor="white"
                 }
                 else{
-                    x.src="selected.png";
+                    document.getElementById("target").style.backgroundColor="red"
                 }
+            }
+
+            function clicked(x){
+                var y = document.getElementById(x);
+                if(y.src.match("selected")){
+                    y.src=y.id+".jpg";
+                }
+                else{
+                    y.src="selected.png";
+                }
+            }
+
+            function add(x){
+                sum+=Number(document.getElementById("stack").innerHTML);
+            }
+
+            function output(){
+                alert(sum);
             }
         </script>
 
@@ -71,14 +99,53 @@
         </div>
         <div class="list">
             <h3>BEST FRUIT</h3>          
-            <input id="apple" type="image" src="apple.jpg" onclick="clicked(this.id);">
-            <input id="banana" type="image" src="banana.jpg" onclick="clicked(this.id);">
-            <input id="grape" type="image" src="grape.jpg" onclick="clicked(this.id);">
-            <input id="melon" type="image" src="melon.jpg" onclick="clicked(this.id);">
-            <input id="peach" type="image" src="peach.jpg" onclick="clicked(this.id);">
-            <input id="pear" type="image" src="peach.jpg" onclick="clicked(this.id);">
-            <input id="watermelon" type="image" src="watermelon.jpg" onclick="clicked(this.id);">
-            <input id="tomato" type="image" src="tomato.jpg" onclick="clicked(this.id);">
-        </div>
+            <table border="1">
+                <tr>
+                    <td id="target" onclick="change(this.id);add();">
+                        <input id="apple" type="image" src="apple.jpg" onclick="clicked(this.id);">
+                        <p>apple</p>
+                        <p id="stack" onclick="">1</p>
+                    </td>
+                    <td>
+                        <input id="banana" type="image" src="banana.jpg" onclick="clicked(this.id);">
+                        <p>apple</p>
+                        <p id="stack" onclick="add(this.id);">1</p>
+                    </td>
+                    <td>
+                        <input id="grape" type="image" src="grape.jpg" onclick="clicked(this.id);">
+                        <p>apple</p>
+                        <p id="stack" onclick="add(this.id);">1</p>
+                    </td>
+                    <td>
+                        <input id="melon" type="image" src="melon.jpg" onclick="clicked(this.id);">
+                        <p>apple</p>
+                        <p id="stack" onclick="add(this.id);">1</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input id="peach" type="image" src="peach.jpg" onclick="clicked(this.id);">
+                        <p>apple</p>
+                        <p id="tomato">1$</p>
+                    </td>
+                    <td>
+                        <input id="pear" type="image" src="pear.jpg" onclick="clicked(this.id);">
+                        <p>apple</p>
+                        <p id="tomato">1$</p>
+                    </td>
+                    <td>
+                        <input id="tomato" type="image" src="tomato.jpg" onclick="clicked(this.id);">
+                        <p>apple</p>
+                        <p id="tomato">1$</p>
+                    </td>
+                    <td>
+                        <input id="watermelon" type="image" src="watermelon.jpg" onclick="clicked(this.id);">
+                        <p>apple</p>
+                        <p id="tomato">1$</p>
+                    </td>
+                </tr>
+            </table>
+            <input type="button" value="purchase" onclick="output();">
+        </div>  
     </body>
 </html>
