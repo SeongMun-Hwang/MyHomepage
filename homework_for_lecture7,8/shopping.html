@@ -10,9 +10,9 @@
                 border-bottom: none;
             }
             .main ul{
-                margin-left: 20%;
-                margin-right: 20%;
-                justify-content:center;
+                width: 800px;
+                margin-left: auto;
+                margin-right: auto;
             }
             .main li{
                 list-style: none;
@@ -23,16 +23,15 @@
             .main li:hover{
                 color: red;
             }
+
             .list{
-                
-                position: relative;
-                margin-left: 50px;
-                margin-right: 50px;
-                width: 60%;
+                width: 1000px;
+                margin-left: auto;
+                margin-right: auto;
             }
-            .list image{
-                width: 10px;
-                height: 10px;
+            .list input[type='image']{
+                width: 240px;
+                height: 240px;
             }
             .list td, tr{
                 border-style:hidden;
@@ -42,12 +41,19 @@
 
     <body>
         <script>
-            function clicked(){
-                document.getElementsByClassName("fruit1").src="selected.png";
+            function clicked(x){
+                var x = document.getElementById(x);
+                if(x.src.match("selected")){
+                    x.src=x.id+".jpg";
+                }
+                else{
+                    x.src="selected.png";
+                }
             }
         </script>
+
         <div class="top">
-            <img src="shopping.jpg" alt="">
+            <img src="shopping.jpg" alt="" width="100%">
         </div>
         <div class="main">
             <hr>
@@ -64,8 +70,15 @@
             <hr>
         </div>
         <div class="list">
-            <h3>BEST FRUIT</h3>
-            <input class="fruit1" type="image" src="apple.jpg" onclick="clicked();">
+            <h3>BEST FRUIT</h3>          
+            <input id="apple" type="image" src="apple.jpg" onclick="clicked(this.id);">
+            <input id="banana" type="image" src="banana.jpg" onclick="clicked(this.id);">
+            <input id="grape" type="image" src="grape.jpg" onclick="clicked(this.id);">
+            <input id="melon" type="image" src="melon.jpg" onclick="clicked(this.id);">
+            <input id="peach" type="image" src="peach.jpg" onclick="clicked(this.id);">
+            <input id="pear" type="image" src="peach.jpg" onclick="clicked(this.id);">
+            <input id="watermelon" type="image" src="watermelon.jpg" onclick="clicked(this.id);">
+            <input id="tomato" type="image" src="tomato.jpg" onclick="clicked(this.id);">
         </div>
     </body>
 </html>
