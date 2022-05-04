@@ -24,7 +24,6 @@
                 color: red;
             }
             .list{
-                
                 position: relative;
                 margin-left: 50px;
                 margin-right: 50px;
@@ -42,8 +41,16 @@
 
     <body>
         <script>
+            var x
+            function count(num){
+                x+=num;
+            }
             function clicked(){
-                document.getElementsByClassName("fruit1").src="selected.png";
+                document.getElementById("fruit1").src="selected.png";
+                document.write(y);
+            }
+            function price(){
+                alert("price is"+ x);
             }
         </script>
         <div class="top">
@@ -65,7 +72,20 @@
         </div>
         <div class="list">
             <h3>BEST FRUIT</h3>
-            <input class="fruit1" type="image" src="apple.jpg" onclick="clicked();">
+            <table>
+                <tr>
+                    <input type="image" src="apple.jpg" onclick="clicked();">
+                    <td>apple</td>
+                    <td>1$</td>
+                </tr>
+                <tr>
+                    <input type="image" src="apple.jpg" onclick="clicked();">
+                    <td>apple</td>
+                    <td>1$</td>
+                </tr>
+            </table>
+            
         </div>
+        <button onclick="price();">purchase</button>
     </body>
 </html>
