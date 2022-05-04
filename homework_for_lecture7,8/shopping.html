@@ -25,16 +25,9 @@
             }
 
             .list{
-<<<<<<< HEAD
-                position: relative;
-                margin-left: 50px;
-                margin-right: 50px;
-                width: 60%;
-=======
                 width: 1000px;
                 margin-left: auto;
                 margin-right: auto;
->>>>>>> 532217909e0cdf0e6cfdf0ac4c14372b47c7de9f
             }
             .list input[type='image']{
                 width: 240px;
@@ -58,7 +51,7 @@
 
     <body>
         <script>
-            var sum;
+            var sum=0;
             function change(x){
                 if(document.getElementById("target").style.backgroundColor.match("red")){
                     document.getElementById("target").style.backgroundColor="white"
@@ -105,31 +98,14 @@
             <hr>
         </div>
         <div class="list">
-<<<<<<< HEAD
-            <h3>BEST FRUIT</h3>
-            <table>
-                <tr>
-                    <input type="image" src="apple.jpg" onclick="clicked();">
-                    <td>apple</td>
-                    <td>1$</td>
-                </tr>
-                <tr>
-                    <input type="image" src="apple.jpg" onclick="clicked();">
-                    <td>apple</td>
-                    <td>1$</td>
-                </tr>
-            </table>
-            
-        </div>
-        <button onclick="price();">purchase</button>
-=======
+
             <h3>BEST FRUIT</h3>          
             <table border="1">
                 <tr>
                     <td id="target" onclick="change(this.id);add();">
                         <input id="apple" type="image" src="apple.jpg" onclick="clicked(this.id);">
                         <p>apple</p>
-                        <p id="stack" onclick="">1</p>
+                        <p id="stack" onclick="add(this.id)">1</p>
                     </td>
                     <td>
                         <input id="banana" type="image" src="banana.jpg" onclick="clicked(this.id);">
@@ -172,6 +148,5 @@
             </table>
             <input type="button" value="purchase" onclick="output();">
         </div>  
->>>>>>> 532217909e0cdf0e6cfdf0ac4c14372b47c7de9f
     </body>
 </html>
