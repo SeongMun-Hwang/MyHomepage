@@ -23,7 +23,6 @@
             .main li:hover{
                 color: red;
             }
-
             .list{
                 width: 1000px;
                 margin-left: auto;
@@ -53,11 +52,11 @@
         <script>
             var sum=0;
             function change(x){
-                if(document.getElementById("target").style.backgroundColor.match("red")){
-                    document.getElementById("target").style.backgroundColor="white"
+                if(document.getElementById(x).style.backgroundColor.match("red")){
+                    document.getElementById(x).style.backgroundColor="white"
                 }
                 else{
-                    document.getElementById("target").style.backgroundColor="red"
+                    document.getElementById(x).style.backgroundColor="red"
                 }
             }
 
@@ -102,15 +101,15 @@
             <h3>BEST FRUIT</h3>          
             <table border="1">
                 <tr>
-                    <td id="target" onclick="change(this.id);add();">
+                    <td id="apple" onclick="change(this.id);add();">
                         <input id="apple" type="image" src="apple.jpg" onclick="clicked(this.id);">
                         <p>apple</p>
-                        <p id="stack" onclick="add(this.id)">1</p>
+                        <p id="stack">2</p>
                     </td>
-                    <td>
-                        <input id="banana" type="image" src="banana.jpg" onclick="clicked(this.id);">
+                    <td id="banana" onclick="change(this.id);add();">
+                        <input type="image" src="banana.jpg" onclick="clicked(this.src);">
                         <p>apple</p>
-                        <p id="stack" onclick="add(this.id);">1</p>
+                        <p id="stack">1</p>
                     </td>
                     <td>
                         <input id="grape" type="image" src="grape.jpg" onclick="clicked(this.id);">
