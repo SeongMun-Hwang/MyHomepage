@@ -1,0 +1,101 @@
+/* main page style */
+#login{
+    position: absolute;
+    left: 80%;
+}
+#login input{
+    height: 30px;
+    width: 300px;
+}
+#login input[type='button']{
+    border: none;
+}
+/* shopping page style */
+a{
+    text-decoration: none;
+}
+h3 a:visited{
+    color: white;
+}
+#top{
+    background-image: url(shopping.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 1000px;
+    color: white;
+}
+#top h1{
+    position: absolute;
+    left: 10%;
+}
+
+#top h3{
+    position: absolute;
+    left: 80%;
+    top: 5%;
+}
+
+.main hr{
+    border-color: red;
+    border-bottom: none;
+}
+.main ul{
+    width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.main li{
+    list-style: none;
+    float: left;
+    margin: 0px 10px 0px 10px;
+    padding: 10px;
+}
+.main li:hover{
+    color: red;
+}
+.list{
+    width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.list img{
+    width: 240px;
+    height: 240px;
+}
+.list ul,li{
+    border: 1px;
+}
+.list table{
+    width: 100%;
+    border: none;
+}
+.list td{
+    border: 1;
+    border-color: black;
+}
+.list td:hover{
+    border-color: red;
+}
+.list p{
+    text-align: center;
+}
+.list input[type='button']{
+    width: 100%;
+    height: 40px;
+    border: none;
+    background-color: skyblue;
+}
+
+#fixed{
+    position: fixed;
+    background-color:aqua;
+    text-align: center;
+    width: 100px;
+    height: 70px;
+    top: 90%;
+    left: 90%;
+}
+
+#fixed a{
+    color: red;
+}
