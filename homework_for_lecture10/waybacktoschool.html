@@ -44,6 +44,7 @@
             //bus 50-1
             var path2 = [
                 new google.maps.LatLng(36.62880309, 127.5134174),
+                new google.maps.LatLng(36.62989719, 127.5110934),
                 new google.maps.LatLng(36.63183548, 127.5107203),
                 new google.maps.LatLng(36.63463696, 127.509803),
                 new google.maps.LatLng(36.63648157, 127.5086044),
@@ -89,12 +90,12 @@
             // });
             // marker.setMap(map);
 
-            // var myPath1 = new google.maps.Polyline({
-            //     path: path1,
-            //     strokeColor: "#0000FF",
-            //     strokeOpacity: 1,
-            //     strokeWeight: 1
-            // });
+            var myPath1 = new google.maps.Polyline({
+                path: path1,
+                strokeColor: "#0000FF",
+                strokeOpacity: 1,
+                strokeWeight: 1
+            });
             var myPath2 = new google.maps.Polyline({
                 path: path2,
                 strokeColor: "red",
@@ -102,7 +103,7 @@
                 strokeWeight: 1
             });
 
-            //myPath1.setMap(map);
+            myPath1.setMap(map);
             myPath2.setMap(map);
 
         }
