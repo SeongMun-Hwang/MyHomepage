@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+    <div id="map" style="width:800px; height: 500px"></div>
+
+    <script>
+
+
+        function myMap() {
+            var mapCanvas = document.getElementById("map");
+            var myCenter = new google.maps.LatLng(36.635233305399275, 127.49147777755636); //충청북도청
+            var mapOptions = {
+                center: myCenter,
+                zoom: 12
+            };
+
+            //bus 514
+            var path1 = [
+                new google.maps.LatLng(36.62880309, 127.5134174),
+                new google.maps.LatLng(36.62989719, 127.5110934),
+                new google.maps.LatLng(36.63183548, 127.5107203),
+                new google.maps.LatLng(36.63300141, 127.5092744),
+                new google.maps.LatLng(36.63121088, 127.5067696),
+                new google.maps.LatLng(36.62736777, 127.5047784),
+                new google.maps.LatLng(36.62483346, 127.5032425),
+                new google.maps.LatLng(36.62470881, 127.500063),
+                new google.maps.LatLng(36.62580178, 127.499211),
+                new google.maps.LatLng(36.62609691, 127.4956202),
+                new google.maps.LatLng(36.6278028, 127.4949132),
+                new google.maps.LatLng(36.62841178, 127.4914736),
+                new google.maps.LatLng(36.62971752, 127.4913011),
+                new google.maps.LatLng(36.63155959, 127.4910788),
+                new google.maps.LatLng(36.63417647, 127.4907589),
+                new google.maps.LatLng(36.63719352, 127.4903218),
+                new google.maps.LatLng(36.63674923, 127.4858173),
+                new google.maps.LatLng(36.63593697, 127.4779443),
+                new google.maps.LatLng(36.63556306, 127.4747978),
+                new google.maps.LatLng(36.6352951, 127.4681702),
+                new google.maps.LatLng(36.63501244, 127.4635979),
+                new google.maps.LatLng(36.63495162, 127.459319),
+            ];
+            //bus 50-1
+            var path2 = [
+                new google.maps.LatLng(36.62880309, 127.5134174),
+                new google.maps.LatLng(36.63183548, 127.5107203),
+                new google.maps.LatLng(36.63463696, 127.509803),
+                new google.maps.LatLng(36.63648157, 127.5086044),
+                new google.maps.LatLng(36.63234344, 127.5038748),
+                new google.maps.LatLng(36.63055826, 127.5029193),
+                new google.maps.LatLng(36.6302181, 127.5044547),
+                new google.maps.LatLng(36.62969958, 127.5056641),
+                new google.maps.LatLng(36.62736777, 127.5047784),
+                new google.maps.LatLng(36.62483346, 127.5032425),
+                new google.maps.LatLng(36.62470881, 127.500063),
+                new google.maps.LatLng(36.62580178, 127.499211),
+                new google.maps.LatLng(36.62609691, 127.4956202),
+                new google.maps.LatLng(36.6278028, 127.4949132),
+                new google.maps.LatLng(36.62841178, 127.4914736),
+                new google.maps.LatLng(36.62971752, 127.4913011),
+                new google.maps.LatLng(36.63155959, 127.4910788),
+                new google.maps.LatLng(36.63417647, 127.4907589),
+                new google.maps.LatLng(36.63719352, 127.4903218),
+                new google.maps.LatLng(36.63699526, 127.4880927),
+                new google.maps.LatLng(36.63674923, 127.4858173),
+                new google.maps.LatLng(36.63637189, 127.4817995),
+                new google.maps.LatLng(36.63593697, 127.4779443),
+                new google.maps.LatLng(36.63556306, 127.4747978),
+                new google.maps.LatLng(36.6352951, 127.4681702),
+                new google.maps.LatLng(36.63501244, 127.4635979),
+                new google.maps.LatLng(36.63495162, 127.459319),
+                new google.maps.LatLng(36.63474553, 127.4556728),
+                new google.maps.LatLng(36.63438026, 127.4532108),
+                new google.maps.LatLng(36.63194956, 127.4523259),
+                new google.maps.LatLng(36.62955061, 127.4501244),
+                new google.maps.LatLng(36.6251756, 127.4499038),
+
+            ];
+            var myhomoe = new google.maps.LatLng(36.63154805470023, 127.51798043974648);
+            var destination = new google.maps.LatLng(36.62563026275683, 127.4544004838527);
+
+            var map = new google.maps.Map(mapCanvas, mapOptions);
+
+            // var marker = new google.maps.Marker({
+            //     position: myCenter,
+            //     animation: google.maps.Animation.BOUNCE,
+            //     icon: 'cbnu.png'
+            // });
+            // marker.setMap(map);
+
+            // var myPath1 = new google.maps.Polyline({
+            //     path: path1,
+            //     strokeColor: "#0000FF",
+            //     strokeOpacity: 1,
+            //     strokeWeight: 1
+            // });
+            var myPath2 = new google.maps.Polyline({
+                path: path2,
+                strokeColor: "red",
+                strokeOpacity: 1,
+                strokeWeight: 1
+            });
+
+            //myPath1.setMap(map);
+            myPath2.setMap(map);
+
+        }
+    </script>
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=
+    AIzaSyCaTH2C0PeE_3eRaTNPzntN2FvKmZBAFA8&libraries=visualization&callback=myMap"></script>
+
+</body>
+
+</html>
