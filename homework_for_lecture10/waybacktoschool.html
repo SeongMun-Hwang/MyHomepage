@@ -13,7 +13,7 @@
             var myCenter = new google.maps.LatLng(36.635233305399275, 127.49147777755636); //충청북도청
             var mapOptions = {
                 center: myCenter,
-                zoom: 12
+                zoom: 14
             };
 
             //bus 514
@@ -78,33 +78,75 @@
                 new google.maps.LatLng(36.6251756, 127.4499038),
 
             ];
-            var myhomoe = new google.maps.LatLng(36.63154805470023, 127.51798043974648);
+            var myhome = new google.maps.LatLng(36.63021372651753, 127.51761373544032);
             var destination = new google.maps.LatLng(36.62563026275683, 127.4544004838527);
 
             var map = new google.maps.Map(mapCanvas, mapOptions);
 
-            // var marker = new google.maps.Marker({
-            //     position: myCenter,
-            //     animation: google.maps.Animation.BOUNCE,
-            //     icon: 'cbnu.png'
-            // });
-            // marker.setMap(map);
+            var home = new google.maps.Marker({
+                position: myhome,
+            });
+            var software = new google.maps.Marker({
+                position: destination,
+            }); 
 
-            var myPath1 = new google.maps.Polyline({
+            var infowindow = new google.maps.InfoWindow({
+                content: "My Home"
+            });
+
+            var infowindow2 = new google.maps.InfoWindow({
+                content: "My Edifice"
+            });
+
+            // var infowindow3 =new google.maps.infowindow({
+            //     content: "this path will takes about 40minutes"
+            // });
+            
+            var busPath1 = new google.maps.Polyline({
                 path: path1,
                 strokeColor: "#0000FF",
                 strokeOpacity: 1,
                 strokeWeight: 1
             });
-            var myPath2 = new google.maps.Polyline({
+            var busPath2 = new google.maps.Polyline({
                 path: path2,
                 strokeColor: "red",
                 strokeOpacity: 1,
                 strokeWeight: 1
             });
 
-            myPath1.setMap(map);
-            myPath2.setMap(map);
+            var walkPath1 = new google.maps.Polyline({
+                path: [myhome, new google.maps.LatLng(36.62880309, 127.5134174)],
+                strokeColor: "green",
+                strokeOpacity: 1,
+                strokeWeight: 2
+            });
+            var walkPath2 = new google.maps.Polyline({
+                path: [new google.maps.LatLng(36.6251756, 127.4499038),destination],
+                strokeColor: "green",
+                strokeOpacity: 1,
+                strokeWeight: 2
+            });
+            var walkPath3 = new google.maps.Polyline({
+                path: [new google.maps.LatLng(36.63495162, 127.459319),destination],
+                strokeColor: "green",
+                strokeOpacity: 1,
+                strokeWeight: 2
+            });
+
+            home.setMap(map);
+            software.setMap(map);
+
+            infowindow.open(map, home);
+            infowindow2.open(map, software);
+            //infowindow3.open(map, busPath1);
+
+            busPath1.setMap(map);
+            busPath2.setMap(map);
+
+            walkPath1.setMap(map);
+            walkPath2.setMap(map);
+            walkPath3.setMap(map);
 
         }
     </script>
