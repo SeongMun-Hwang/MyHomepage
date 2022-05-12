@@ -89,6 +89,10 @@
             var software = new google.maps.Marker({
                 position: destination,
             }); 
+            var time = new google.maps.Marker({
+                position: new google.maps.LatLng(36.62841178, 127.4914736),
+                
+            }); 
 
             var infowindow = new google.maps.InfoWindow({
                 content: "My Home"
@@ -98,13 +102,14 @@
                 content: "My Edifice"
             });
 
-            // var infowindow3 =new google.maps.infowindow({
-            //     content: "this path will takes about 40minutes"
-            // });
+            var infowindow3 = new google.maps.InfoWindow({
+                content: "this path will takes 40 minutes"
+            });
+
             
             var busPath1 = new google.maps.Polyline({
                 path: path1,
-                strokeColor: "#0000FF",
+                strokeColor: "blue",
                 strokeOpacity: 1,
                 strokeWeight: 1
             });
@@ -136,10 +141,11 @@
 
             home.setMap(map);
             software.setMap(map);
+            time.setMap(null);
 
             infowindow.open(map, home);
             infowindow2.open(map, software);
-            //infowindow3.open(map, busPath1);
+            infowindow3.open(map, time);
 
             busPath1.setMap(map);
             busPath2.setMap(map);
