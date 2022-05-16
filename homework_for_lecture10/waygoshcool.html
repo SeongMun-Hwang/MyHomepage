@@ -1,13 +1,55 @@
 <!DOCTYPE html>
 <html>
+<head>
+    <style>
+        hr{
+            width: 50px;
+            border: 2px solid;
+            float: left;
 
+        }
+        table{
+            border-collapse: collapse;
+        }
+        .tbody{
+            background-color: rgb(211, 207, 207);
+        }
+        td,tr{
+            border: 2px solid grey;
+            width: 300px;
+            text-align: center;
+        }
+    </style>
+</head>
 <body>
+    <h1>Bus line which I use when go to shcool</h1>  
+    <table>
+        <thead>
+            <tr>
+                <th colspan="2" style="background-color: grey;"></td>
+                <th><hr style="color: green">walk path</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><hr style="color: red;">bus 50-1 path</td>
+                <td>This will takes about 40minutes</td>
+                <td>This will takes about 5minutes</td>
+            </tr>
+            <tr>
+                <td><hr style="color: blue;">bus 514 path</td>
+                <td>This will takes about 30minutes</td>
+                <td>This will takes about 12minutes</td>
+            <tr>
+        </tbody>
+    </table>
+    <p>*heatmaps means where people crowded</p>
+    <br>
 
-    <div id="map" style="width:800px; height: 500px"></div>
+
+    <div id="map" style="width:1000px; height: 650px"></div>
 
     <script>
-
-
         function myMap() {
             var mapCanvas = document.getElementById("map");
             var myCenter = new google.maps.LatLng(36.635233305399275, 127.49147777755636); //충청북도청
@@ -81,6 +123,36 @@
             var myhome = new google.maps.LatLng(36.63021372651753, 127.51761373544032);
             var destination = new google.maps.LatLng(36.62563026275683, 127.4544004838527);
 
+            var MarkerData=[
+                new google.maps.LatLng(36.62971752, 127.4913011),
+                new google.maps.LatLng(36.63417647, 127.4907589),
+                new google.maps.LatLng(36.63495162, 127.459319),
+                new google.maps.LatLng(36.63155959, 127.4910788),
+                new google.maps.LatLng(36.6302181, 127.5044547),
+                new google.maps.LatLng(36.63699526, 127.4880927),
+                new google.maps.LatLng(36.63194956, 127.4523259),
+                new google.maps.LatLng(36.63474553, 127.4556728),
+            ]
+            var MarkerContent=[
+                '농협동청주지점','육거리','서운동','도청','지하상가','사창사거리','청주고','충북대학교 정문'
+            ]
+
+            var heatMapData = [
+                new google.maps.LatLng(36.62971752, 127.4913011),
+                new google.maps.LatLng(36.63417647, 127.4907589),
+                new google.maps.LatLng(36.63495162, 127.459319),
+                new google.maps.LatLng(36.63155959, 127.4910788),
+                new google.maps.LatLng(36.6302181, 127.5044547),
+                new google.maps.LatLng(36.63699526, 127.4880927),
+                new google.maps.LatLng(36.63194956, 127.4523259),
+                new google.maps.LatLng(36.63474553, 127.4556728),
+            ]
+
+            var heatmap = new google.maps.visualization.HeatmapLayer({
+                data: heatMapData,
+                radius: 50
+            })
+
             var map = new google.maps.Map(mapCanvas, mapOptions);
 
             var home = new google.maps.Marker({
@@ -89,23 +161,25 @@
             var software = new google.maps.Marker({
                 position: destination,
             }); 
-            var time = new google.maps.Marker({
-                position: new google.maps.LatLng(36.62841178, 127.4914736),
-                
-            }); 
 
-            var infowindow = new google.maps.InfoWindow({
+            for (var i = 0; i < MarkerData.length; i++) {
+                marker = new google.maps.Marker({
+                    position: MarkerData[i],
+                    map: map
+                })
+                infowindow = new google.maps.InfoWindow({
+                    content:"<p>station name: </p>"+MarkerContent[i]
+                });
+                infowindow.open(map, marker);
+            }
+
+            var infowindow1 = new google.maps.InfoWindow({
                 content: "My Home"
             });
 
             var infowindow2 = new google.maps.InfoWindow({
                 content: "My Edifice"
             });
-
-            var infowindow3 = new google.maps.InfoWindow({
-                content: "this path will takes 40 minutes"
-            });
-
             
             var busPath1 = new google.maps.Polyline({
                 path: path1,
@@ -124,28 +198,26 @@
                 path: [myhome, new google.maps.LatLng(36.62880309, 127.5134174)],
                 strokeColor: "green",
                 strokeOpacity: 1,
-                strokeWeight: 2
+                strokeWeight: 3
             });
             var walkPath2 = new google.maps.Polyline({
                 path: [new google.maps.LatLng(36.6251756, 127.4499038),destination],
                 strokeColor: "green",
                 strokeOpacity: 1,
-                strokeWeight: 2
+                strokeWeight: 3
             });
             var walkPath3 = new google.maps.Polyline({
                 path: [new google.maps.LatLng(36.63495162, 127.459319),destination],
                 strokeColor: "green",
                 strokeOpacity: 1,
-                strokeWeight: 2
+                strokeWeight: 3
             });
 
             home.setMap(map);
             software.setMap(map);
-            time.setMap(null);
 
-            infowindow.open(map, home);
+            infowindow1.open(map, home);
             infowindow2.open(map, software);
-            infowindow3.open(map, time);
 
             busPath1.setMap(map);
             busPath2.setMap(map);
@@ -154,11 +226,12 @@
             walkPath2.setMap(map);
             walkPath3.setMap(map);
 
+            heatmap.setMap(map);
         }
     </script>
 
     <script src="https://maps.googleapis.com/maps/api/js?key=
-    AIzaSyCaTH2C0PeE_3eRaTNPzntN2FvKmZBAFA8&libraries=visualization&callback=myMap"></script>
+    YOUR_KEY&libraries=visualization&callback=myMap"></script>
 
 </body>
 
